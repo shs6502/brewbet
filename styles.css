@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    color: #4a2c2a;
+    margin-bottom: 30px;
+}
+
+.game-setup {
+    margin-bottom: 30px;
+}
+
+input {
+    padding: 10px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #6f4e37;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #8b6b4a;
+}
+
+.game-board {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.coffee-cup {
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.coffee-cup:hover {
+    transform: scale(1.1);
+}
+
+.broken {
+    animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+    0% { transform: translate(0, 0) rotate(0); }
+    20% { transform: translate(-10px, 0) rotate(-5deg); }
+    40% { transform: translate(10px, 0) rotate(5deg); }
+    60% { transform: translate(-10px, 0) rotate(-5deg); }
+    80% { transform: translate(10px, 0) rotate(5deg); }
+    100% { transform: translate(0, 0) rotate(0); }
+}
+
+.button-group {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+#resetGame {
+    background-color: #8b6b4a;
+}
+
+#resetGame:hover {
+    background-color: #a08669;
+}
+
+/* 반응형 디자인 */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 15px;
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    input {
+        width: 100%;
+        max-width: 200px;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .game-board {
+        gap: 15px;
+    }
+
+    .coffee-cup {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .coffee-cup {
+        width: 60px;
+        height: 60px;
+    }
+
+    .button-group {
+        flex-direction: column;
+        width: 100%;
+        max-width: 200px;
+        margin: 15px auto 0;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+
+/* 브랜드 로고 스타일 추가 */
+.brand {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+    color: #6f4e37;
+    opacity: 0.7;
+    font-style: italic;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* 모바일 화면에서의 브랜드 로고 조정 */
+@media screen and (max-width: 480px) {
+    .brand {
+        font-size: 16px;
+        bottom: 10px;
+        right: 10px;
+    }
+} 

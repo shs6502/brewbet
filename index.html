@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrewBet - 커피내기 게임</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#6f4e37">
+    <link rel="apple-touch-icon" href="icons/icon-192x192.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="BrewBet">
+</head>
+<body>
+    <div class="container">
+        <h1>BrewBet</h1>
+        <div class="game-setup">
+            <input type="number" id="playerCount" min="2" placeholder="인원 수 입력 (2명 이상)">
+            <div class="button-group">
+                <button id="startGame">게임 시작</button>
+                <button id="resetGame">리셋</button>
+            </div>
+        </div>
+        <div id="gameBoard" class="game-board"></div>
+    </div>
+    <div class="brand">SlowSong</div>
+    <audio id="breakSound" src="sound/breaking.mp3"></audio>
+    <audio id="bellSound" src="sound/uhuh.mp3"></audio>
+    <script src="script.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then((registration) => {
+                        console.log('ServiceWorker 등록 성공:', registration.scope);
+                    })
+                    .catch((error) => {
+                        console.log('ServiceWorker 등록 실패:', error);
+                    });
+            });
+        }
+    </script>
+</body>
+</html> 

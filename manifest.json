@@ -1,0 +1,21 @@
+{
+    "name": "BrewBet",
+    "short_name": "BrewBet",
+    "description": "커피내기 게임 앱",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#f0f0f0",
+    "theme_color": "#6f4e37",
+    "icons": [
+        {
+            "src": "icons/icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+} 
